@@ -107,7 +107,7 @@ int main(int argc, char** argv)
 
         Eigen::Quaterniond q_w_i(gt_pose.topLeftCorner<3, 3>());
 //        Eigen::Quaterniond q = q_transform * q_w_i;
-//        ´Ë´¦Ó¦¸ÃÌí¼Ó * q_transform.inverse()£¬ÈçÏÂËùÊ¾
+//        æ­¤å¤„åº”è¯¥æ·»åŠ  * q_transform.inverse()ï¼Œå¦‚ä¸‹æ‰€ç¤º
         Eigen::Quaterniond q = q_transform * q_w_i *q_transform.inverse();
         q.normalize();
         Eigen::Vector3d t = q_transform * gt_pose.topRightCorner<3, 1>();
